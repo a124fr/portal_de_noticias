@@ -1,9 +1,10 @@
 <?php
 
-class Usuario extends Bd {
+class Usuario extends Bd 
+{
 
-    public function verificarLogin($login, $senha) {
-                
+    public function verificarLogin($login, $senha) 
+    {                
         if(!empty($login) && !empty($senha))  {
             $sql = "SELECT id, login, senha FROM usuario WHERE login = :login AND senha = :senha";
 

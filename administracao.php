@@ -3,8 +3,18 @@ session_start();
 require 'topo_restrito.php';
 ?>
     <div class="container">
-        <div class="row justify-content-left">  
-            <a href="cadastrar_blog.php">Cadastrar Blog</a>
+        <div>  
+            <h1>Bem-vindo usuário</h1>
+        
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="lista_noticias.php">Cadastro Notícia</a>
+                </li>
+            </ul>
+
+            <hr>
+            <br>
+                    
         </div>
     </div>
 

@@ -1,6 +1,7 @@
 <?php
 
-class Bd {
+class Bd 
+{
     
     protected $dsn, $user, $password, $conn;
     
