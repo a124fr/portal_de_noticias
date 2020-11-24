@@ -36,7 +36,7 @@ include_once __DIR__ .'/servico/Noticia.php';
   <h1>Noticías</h1>
   <div class="row">  
   <?php foreach($lista as $linha): ?>
-  <div class="col-sm-4">  
+  <div class="col-sm-4" style="margin-bottom:50px;">  
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title"><?=$linha['titulo'];?></h5>      
