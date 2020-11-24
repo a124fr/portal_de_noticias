@@ -1,3 +1,7 @@
+<?php
+include_once __DIR__ .'/servico/Bd.php';
+include_once __DIR__ .'/servico/Noticia.php';
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,7 +25,27 @@
       </div>
     </div>
   </nav>
-    
+  <div class="container">
+  
+  <?php 
+   $noticia = new Noticia();
+   $lista = $noticia->listarNoticias();
+  
+   if($lista):
+  ?>
+  <?php foreach($lista as $linha): ?>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><?=$linha['titulo'];?></h5>      
+      <p class="card-text"><?=$linha['corpo'];?></p>      
+    </div>
+  </div>  
+  <?php 
+      endforeach;
+    endif;    
+  ?>
+
+  </div>  
     
 </body>
 </html>
