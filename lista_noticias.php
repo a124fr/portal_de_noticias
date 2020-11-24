@@ -29,7 +29,9 @@ $lista = $noticia->listarNoticias();
                 <th>Corpo</th>
                 <th colspan="2">Ações</th>
             </tr>
-            <?php foreach($lista as $linha):?>
+            <?php 
+            if($lista):
+                foreach($lista as $linha):?>
             <tr>
                 <td><?=$linha['id'];?></td>
                 <td><?=$linha['titulo'];?></td>
@@ -39,7 +41,16 @@ $lista = $noticia->listarNoticias();
                 <td><a href="">Alterar</a></td>
                 <td><a href="">Excluir</a></td>
             </tr>
-            <?php endforeach;?>
+            <?php 
+                endforeach;
+            else:    
+            ?>            
+            <tr>
+                <td colspan="4">Nenhuma noticía cadastrada.</td>
+            </tr>
+            <?php 
+            endif;
+            ?>
         </table>
     </div>
 
