@@ -2,12 +2,18 @@
 
 class Bd {
     
-    private $dsn, $user, $password, $conn;
+    protected $dsn, $user, $password, $conn;
     
     function __construct() {
+        /*
         $this->dsn = 'mysql:dbname=id13482607_aula_php;host=localhost';
         $this->user = 'id13482607_root';
         $this->password = '_R]rBVRDX5ZALJ~5';
+        */
+
+        $this->dsn = 'mysql:dbname=portal_blog;host=localhost';
+        $this->user = 'root';
+        $this->password = '';
         
         try {
             $this->conn = new PDO($this->dsn, $this->user, $this->password);
@@ -43,4 +49,3 @@ class Bd {
 }
 
 
-?>

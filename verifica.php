@@ -1,40 +1,31 @@
 <?php
 session_start();
 
+include_once __DIR__ .'/servico/Bd.php';
+include_once __DIR__ .'/servico/Usuario.php';
+
 $login=$_POST["login"];
 $senha=$_POST["senha"];
 
+$usuario = new Usuario();
+$resultado = $usuario->verificarLogin($login, $senha);
 
-if ($login =="admin" && $senha =="1234") {
+if ($resultado) {        
+    //$_SESSION["autenticado"]=true;
+    $_SESSION["id_usuario"] = $resultado['id'];
+    $_SESSION["login"] = $login;
     
-    $_SESSION["autenticado"]=true;
+    echo "<script>
+			location.href='administracao.php'
+		  </script>";
     
-    $html ="
-    <html>
-        <head><title>Tela de verificação </title></head>
-        <body>
-         <script>
-         window.location.replace('https://aula-php-andre-eppinghaus.000webhostapp.com/20202/3006/menu.php');
-         </script>
-        </boyd>
-    </html>
-
-";    
 }else {
-    session_destroy ( ) ;
-    $html ="
-<html>
-    <head><title>Tela de verificação </title></head>
-    <body>
-        <h1>O login é $login e sua senha é $senha e são inválidos</h1>
-    </boyd>
-</html>
 
-";
     
+    echo "<script>
+            alert('Login ou senha Incorretos! Digite Novamente!!')
+          </script>";
+    echo "<script>
+            location.href='login.php'
+        </script>";    
 }
-
-
-
-echo $html;
-?>

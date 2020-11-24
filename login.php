@@ -22,7 +22,7 @@ Caso contrário exiba uma tela de aviso.
   <body>
       
     <div class="container">
-        <h1> Sistema de teste</h1>
+        <h1> Acesso Restrito</h1>
         
         <form action="verifica.php" method="post">
             <div class="form-group">

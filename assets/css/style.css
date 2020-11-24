@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    width: 100%;
+    max-width: 350px;
+    margin: 10px auto;
+}
+
+.color {
+    color: white;
+}
+
+#menu_restrito {
+	width:300px;
+}
+
+/*
+.campo_foto {
+    border: none;
+    padding: 0;
+}*/
