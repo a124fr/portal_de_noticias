@@ -12,6 +12,7 @@ $lista = $noticia->listarNoticias();
 ?>
 
     <div class="container">
+    <h1>Lista de Noticías</h1>
     <hr>
         <a href="administracao.php"> < Voltar </a>
         
@@ -32,7 +33,9 @@ $lista = $noticia->listarNoticias();
             <tr>
                 <td><?=$linha['id'];?></td>
                 <td><?=$linha['titulo'];?></td>
-                <td><?=$linha['corpo'];?></td>
+                <td><?php 
+                    $texto = substr($linha['corpo'], 0, 40);
+                    echo $texto.'...';?></td>
                 <td><a href="">Alterar</a></td>
                 <td><a href="">Excluir</a></td>
             </tr>

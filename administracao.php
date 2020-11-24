@@ -4,7 +4,7 @@ require 'topo_restrito.php';
 ?>
     <div class="container">
         <div>  
-            <h1>Bem-vindo usuário</h1>
+            <h1>Bem-vindo <?php echo $_SESSION['login']; ?></h1>
         
             <ul class="nav">
                 <li class="nav-item">

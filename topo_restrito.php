@@ -17,7 +17,7 @@
       </a>
 
       <div class="my-2 my-lg-0">
-         <h4 class="text-white bg-dark">Olá <?php include "valida_login.php";?> <a href="sair.php" class="btn btn-secondary">Sair</a></h4>  
+         <h4 class="text-white bg-dark"><?php include "valida_login.php";?> <a href="sair.php" class="btn btn-secondary">Sair</a></h4>  
       </div>
     </div>
   </nav>
