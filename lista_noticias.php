@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include_once __DIR__ .'/servico/Bd.php';
 include_once __DIR__ .'/servico/Noticia.php';
@@ -13,6 +14,11 @@ $lista = $noticia->listarNoticias();
 
     <div class="container">
     <h1>Lista de Noticías</h1>
+    <?php if(!empty($_GET['msg'])):?>
+        <div class="alert alert-success" role="alert">
+            <?php echo $_GET['msg']; ?>
+        </div>
+    <?php endif;?>
     <hr>
         <a href="administracao.php"> < Voltar </a>
         
@@ -38,8 +44,8 @@ $lista = $noticia->listarNoticias();
                 <td><?php 
                     $texto = substr($linha['corpo'], 0, 40);
                     echo $texto.'...';?></td>
-                <td><a href="">Alterar</a></td>
-                <td><a href="">Excluir</a></td>
+                <td><a href="alterar_noticia.php?id=<?=$linha['id'];?>">Alterar</a></td>                
+                <td><a href="excluir_noticia.php?id=<?=$linha['id'];?>" onclick="return confirm('Deseja Excluir a notícia código: <?=$linha['id'];?>?')">Excluir</a></td>
             </tr>
             <?php 
                 endforeach;
@@ -58,3 +64,9 @@ $lista = $noticia->listarNoticias();
 <?php
 include_once 'rodape_restrito.php';
 ?>
+
+<script>
+    function excluir_noticia(id) {
+        alert(id);
+    }
+</script>
